@@ -160,10 +160,128 @@ if (!empty($_FILES)) {
 */?>
 
 <?php
-$image1 = imagecreatefrompng('https://www.baidu.com/img/bdlogo.png');
+/*$image1 = imagecreatefrompng('https://www.baidu.com/img/bdlogo.png');
 $image2 = imagecreatefromjpeg('D:\love.jpg');
 imagepng($image1, 'baidu.png') or die('创建图像失败!');
 ob_clean();
 header('Content-type:image/jpeg');
 imagejpeg($image2,'love.jpg');
+*/?>
+
+<?php
+/*$image=imagecreate(200,200);
+$green = imagecolorallocate($image, 0, 255, 0);
+$red=imagecolorallocate($image, 255, 0, 0);
+$blue=imagecolorallocate($image, 0, 0, 255);
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+<?php
+/*$image = imagecreatefromgif('http://www.baidu.com/img/baidu_sylogo1.gif');
+ob_clean();
+header('Content-type:image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+<?php
+/*$image = imagecreate(100, 100);
+$black = imagecolorallocate($image, 0, 0, 0);
+$white = imagecolorallocate($image, 0, 0, 0);
+imagesetpixel($image,50,50,$white);
+ob_clean();
+header('Content-type:image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+<?php
+/*$image = imagecreate(200, 200);
+$black = imagecolorallocate($image, 0, 0, 0);
+$white = imagecolorallocate($image, 0, 0, 0);
+for ($i = 0; $i < 15; $i++) {
+    imageline($image, rand(0, 200), rand(0, 200), rand(0, 200), rand(0, 200), $white);
+}
+ob_clean();
+header('Content-type:image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+
+<?php
+/*$image = imagecreate(500, 300);
+$while = imagecolorallocate($image, 255, 255, 255);
+
+$gray = imagecolorallocate($image, 192, 192, 192);
+$darkgray = imagecolorallocate($image, 90, 90, 90);
+$navy = imagecolorallocate($image, 0, 0, 80);
+$darknavy = imagecolorallocate($image, 0, 0, 50);
+$red = imagecolorallocate($image, 255, 0, 0);
+$darkred = imagecolorallocate($image, 90, 0, 0);
+
+for ($i = 160; $i > 150; $i--) {
+    imagefilledarc($image, 250, $i, 400, 200, 0, 45, $darknavy, IMG_ARC_PIE);
+    imagefilledarc($image, 250, $i, 400, 200, 45, 75, $darkgray, IMG_ARC_PIE);
+    imagefilledarc($image, 250, $i, 400, 200, 75, 360, $darkred, IMG_ARC_PIE);
+}
+imagefilledarc($image, 250, 150, 400, 200, 0, 45, $navy, IMG_ARC_PIE);
+imagefilledarc($image, 250, 150, 400, 200, 45, 75, $gray, IMG_ARC_PIE);
+imagefilledarc($image, 250, 150, 400, 200, 75, 360, $red, IMG_ARC_PIE);
+
+ob_clean();
+header('Content-type:image/jpeg');
+
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+<?php
+/*$image = imagecreate(500, 500);
+$white = imagecolorallocate($image, 255, 255, 255);
+$black = imagecolorallocate($image, 0, 0, 0);
+$str = 'Hello PHP!';
+imagettftext($image, 55, 0, 50, 250, $black, 'C:\Windows\Fonts\Arial.ttf', $str);
+imagettftext($image, 55, 45, 100, 370, $black, 'C:\Windows\Fonts\Arial.ttf', $str);
+imagettftext($image, 55, 90, 250, 400, $black, 'C:\Windows\Fonts\Arial.ttf', $str);
+imagettftext($image, 55, 135, 370, 330, $black, 'C:\Windows\Fonts\Arial.ttf', $str);
+ob_clean();
+header('Content-type:image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
+*/?>
+
+<?php
+$image = imagecreate(200, 100);
+$white = imagecolorallocate($image, 255, 255, 255);
+$black = imagecolorallocate($image, 0, 0, 0);
+
+for ($i = 0; $i < 25; $i++){
+    imageline($image, rand(0, 200), rand(0, 100), rand(0, 200), rand(0, 100), $black);
+}
+
+for ($i = 0; $i < 1500; $i++){
+    imagesetpixel($image, rand(0, 200), rand(0, 100), $black);
+}
+
+for ($i = 0, $str = ''; $i < 4;$i++) {
+    switch (rand(1, 3)) {
+        case '1':
+            $ch = rand(0, 9);
+            break;
+        case '2':
+            $ch = sprintf('%c', rand(97, 122));
+            break;
+        case '3':
+            $ch = sprintf('%c', rand(65, 90));
+            break;
+    }
+    $str.= $ch;
+}
+ob_clean();
+header('Content-type:image/jpeg');
+imagettftext($image, 32, rand(0, 15), 20, 70, $black, 'C:\\Windows\Fonts\mingliu.ttc', $str);
+imagejpeg($image);
+imagedestroy($image);
 ?>
