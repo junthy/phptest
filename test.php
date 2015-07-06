@@ -253,7 +253,7 @@ imagedestroy($image);
 */?>
 
 <?php
-$image = imagecreate(200, 100);
+/*$image = imagecreate(200, 100);
 $white = imagecolorallocate($image, 255, 255, 255);
 $black = imagecolorallocate($image, 0, 0, 0);
 
@@ -284,4 +284,45 @@ header('Content-type:image/jpeg');
 imagettftext($image, 32, rand(0, 15), 20, 70, $black, 'C:\\Windows\Fonts\mingliu.ttc', $str);
 imagejpeg($image);
 imagedestroy($image);
+*/?>
+
+<?php
+/*header("Content-Type: text/html; charset=utf-8");
+//header("Content_Type: text/html; charset=utf-8");
+$res = mysql_connect('localhost', 'root', '') or die('数据库连接失败');
+echo '数据库连接成功。';
+echo '数据库的客户端信息是：'.mysql_get_client_info();
+echo '数据库的主机信息是:' . mysql_get_host_info($res).'<br />';
+echo '数据库的协议是:' . mysql_get_proto_info($res) . '<br/>';
+echo '数据库的服务器信息是:' . mysql_get_server_info($res) . '<br/>';
+*/?>
+
+<?php
+/*header("Content-Type: text/html; charset=utf-8");
+$sta = setcookie('testcookie', 'testvalue', time() + 60 * 60);
+if ($sta) {
+    echo 'Cookie 设置成功!';
+}
+*/?>
+
+<?php
+/*header("Content-Type: text/html; charset=utf-8");
+if (!isset($_COOKIE['vistime'])) {
+    setcookie('vistime', date('Y-m-d H:i:s'), time() + 60 * 60);
+    echo '这是您第一次访问本网站';
+} else {
+    echo '您上次访问本网站是在:' . $_COOKIE['vistime'];
+    echo '<br/>本次访问时间是:' . date('Y-m-d H:i:s');
+}
+*/?>
+
+<?php
+header("Content-Type: text/html; charset=utf-8");
+setcookie('num',2);
+if (isset($_COOKIE['num'])) {
+    setcookie('num', $_COOKIE['num'] + 1);
+    echo "这是您今天第{$_COOKIE['num']}次访问本网站";
+} else {
+    echo '欢迎您首次访问本网站!';
+}
 ?>
